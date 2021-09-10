@@ -13,6 +13,9 @@ namespace SqlToCSharp.Extensions
     {
         public static string ToPascalCase(this string @string)
         {
+            //clear string
+            @string = Regex.Replace(@string, "[^0-9A-Za-z ,]", string.Empty);
+
             // Find word parts using the following rules:
             // 1. all lowercase starting at the beginning is a word
             // 2. all caps is a word.
