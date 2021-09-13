@@ -7,16 +7,15 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SystemPath = System.IO.Path;
 
 namespace SqlToCSharp.Services
 {
-    public class HandlerService : HandlerBase, IHandlerService
+    public class ConverterFacade : ConverterBase, IConverterFacade
     {
-        public HandlerService(
+        public ConverterFacade(
             string path,
             string tableName)
             : base(path, tableName)
@@ -32,7 +31,7 @@ namespace SqlToCSharp.Services
                 contents: builder.ToString());
         }
 
-        public async Task<IEnumerable<Column>> TryFetchColumns(string connectionString)
+        public async Task<IEnumerable<Column>> FetchColumns(string connectionString)
         {
             try
             {

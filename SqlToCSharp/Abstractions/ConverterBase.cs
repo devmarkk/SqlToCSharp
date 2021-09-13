@@ -1,21 +1,18 @@
 ﻿using SqlToCSharp.Model;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SqlToCSharp.Abstractions
 {
-    public abstract class HandlerBase
+    public abstract class ConverterBase
     {
-        private HandlerBase()
+        private ConverterBase()
         {
             _columns = new List<Column>();
             _errorMessages = new List<string>();
         }
 
-        protected HandlerBase(string path, string className) : this()
+        protected ConverterBase(string path, string className) : this()
         {
             Path = path;
             TableName = className;

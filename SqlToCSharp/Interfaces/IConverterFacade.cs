@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace SqlToCSharp.Interfaces
 {
-    public interface IHandlerService
+    public interface IConverterFacade
     {
         Task GenerateFile();
 
-        Task<IEnumerable<Column>> TryFetchColumns(string connectionString);
+        Task<IEnumerable<Column>> FetchColumns(string connectionString);
 
         StringBuilder BuildFile();
     }
